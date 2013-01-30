@@ -1,3 +1,0 @@
-Facility.tri_facility_id,Facility.facility_name,Facility.street_address,Facility.zip,Facility.lat,Facility.long,Facility.parent_company_name
-000000000AA, Apple Inc, 001 Apple Street, 8224, 39, -74, APPLE INC
-000000000AB, Banana Corp, 002 Banana Ave, 8224, 34, -78, BANANAS4ALL
