@@ -1,5 +1,3 @@
-#!/usr/bin/ruby
-
 require 'csv'
 require 'net/http'
 
@@ -18,7 +16,7 @@ class EPA
 	end
 	
 	def outputfile
-		File.open("epaformat.sql", 'a') { |file| file.puts("INSERT INTO Brownfields VALUES("+String(@sid) + ",\"" + String(@pname) + "\"," + String(@muni) + "," + String(@owner) + ",\"" + String(@add)+"\");")}
+		File.open("epaformat.sql", 'a') { |file| file.puts("INSERT INTO brownfields VALUES ('"+String(@county)+"','"+String(@owner)+"','"+(String(@add).delete "\'")+"','"+(String(@muni).delete "\'")+"','"+(String(@pname).delete "\'")+ "','"+String(@pnum)+"','"+String(@py)+"','"+String(@sid)+"','"+String(@ssx)+"','"+(String(@ssy).delete "\n")+"');")}
 	end
 	
 	def display

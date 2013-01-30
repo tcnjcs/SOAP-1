@@ -68,19 +68,19 @@ class DATABASE_CONFIG {
 		'password' => '$0@Padmin123!',
 		'database' => 'SOAP',
 		'prefix' => '',
-		//'encoding' => 'utf8',
+		'encoding' => 'utf8',
 	);
 
-	public $test = array(
+	public $debug = array(
 		'datasource' => 'Database/Postgres',
 		'persistent' => false,
 		'host' => 'localhost',
 		'port' => '5432',
 		'login' => 'SOAPadmin',
 		'password' => '$0@Padmin123!',
-		'database' => 'SOAP',
+		'database' => 'Debug',
 		'prefix' => '',
-		//'encoding' => 'utf8',
+		'encoding' => 'utf8',
 	);
 /*
 public $default = array(

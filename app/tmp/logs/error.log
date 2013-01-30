@@ -6735,3 +6735,198 @@ LINE 1: ...ian"   WHERE 1 = 1   ORDER BY "Politician"."name" dsc  LIMIT...
 2013-01-29 17:58:31 Error: [MissingControllerException] Controller class ManagerController could not be found.
 #0 /var/www/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2013-01-30 04:32:39 Error: Fatal Error (1): Call to undefined function uses() in [/var/www/app/Controller/UploadsController.php, line 35]
+2013-01-30 04:32:39 Error: [FatalErrorException] Call to undefined function uses()
+#0 /var/www/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/app/Co...', 35)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/app/Co...', 35, Array)
+#2 /var/www/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/app/Co...', 35, Array)
+#3 /var/www/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-01-30 04:36:13 Error: Fatal Error (1): Call to undefined method ConnectionManager::getInstance() in [/var/www/app/Controller/UploadsController.php, line 36]
+2013-01-30 04:36:13 Error: [FatalErrorException] Call to undefined method ConnectionManager::getInstance()
+#0 /var/www/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/app/Co...', 36)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/app/Co...', 36, Array)
+#2 /var/www/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/app/Co...', 36, Array)
+#3 /var/www/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-01-30 04:41:07 Error: Fatal Error (1): Call to protected method DboSource::_execute() from context 'UploadsController' in [/var/www/app/Controller/UploadsController.php, line 37]
+2013-01-30 04:41:07 Error: [FatalErrorException] Call to protected method DboSource::_execute() from context 'UploadsController'
+#0 /var/www/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to protect...', '/var/www/app/Co...', 37)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to protect...', '/var/www/app/Co...', 37, Array)
+#2 /var/www/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to protect...', '/var/www/app/Co...', 37, Array)
+#3 /var/www/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-01-30 04:43:31 Error: [PDOException] SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "WWW_ROOT"
+LINE 1: WWW_ROOT.'epaformat.sql'
+        ^
+#0 /var/www/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('WWW_ROOT.'epafo...', Array)
+#2 /var/www/app/Controller/UploadsController.php(37): DboSource->execute('WWW_ROOT.'epafo...')
+#3 [internal function]: UploadsController->upload()
+#4 /var/www/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UploadsController), Array)
+#5 /var/www/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 /var/www/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UploadsController), Object(CakeRequest), Object(CakeResponse))
+#7 /var/www/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2013-01-30 04:44:23 Error: [PDOException] SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "epaformat"
+LINE 1: epaformat.sql
+        ^
+#0 /var/www/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('epaformat.sql', Array)
+#2 /var/www/app/Controller/UploadsController.php(37): DboSource->execute('epaformat.sql')
+#3 [internal function]: UploadsController->upload()
+#4 /var/www/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UploadsController), Array)
+#5 /var/www/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 /var/www/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UploadsController), Object(CakeRequest), Object(CakeResponse))
+#7 /var/www/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2013-01-30 04:45:48 Error: [PDOException] SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "epaformat"
+LINE 1: epaformat.sql
+        ^
+#0 /var/www/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('epaformat.sql', Array)
+#2 /var/www/lib/Cake/Model/Datasource/DboSource.php(406): DboSource->execute('epaformat.sql', Array)
+#3 /var/www/app/Controller/UploadsController.php(37): DboSource->rawQuery('epaformat.sql')
+#4 [internal function]: UploadsController->upload()
+#5 /var/www/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UploadsController), Array)
+#6 /var/www/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#7 /var/www/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UploadsController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2013-01-30 04:53:55 Error: [PDOException] SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "City"
+LINE 1: ...VALUES(203661,"PISTOL PETES SALOON",Pleasantville City,No,"1...
+                                                             ^
+#0 /var/www/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO Bro...', Array)
+#2 /var/www/app/Controller/UploadsController.php(39): DboSource->execute('INSERT INTO Bro...')
+#3 [internal function]: UploadsController->upload()
+#4 /var/www/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UploadsController), Array)
+#5 /var/www/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 /var/www/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UploadsController), Object(CakeRequest), Object(CakeResponse))
+#7 /var/www/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2013-01-30 04:54:54 Error: [PDOException] SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "City"
+LINE 1: ...VALUES(203661,"PISTOL PETES SALOON",Pleasantville City,No,"1...
+                                                             ^
+#0 /var/www/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO Bro...', Array)
+#2 /var/www/app/Controller/UploadsController.php(39): DboSource->execute('INSERT INTO Bro...')
+#3 [internal function]: UploadsController->upload()
+#4 /var/www/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UploadsController), Array)
+#5 /var/www/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 /var/www/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UploadsController), Object(CakeRequest), Object(CakeResponse))
+#7 /var/www/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2013-01-30 04:56:56 Error: [PDOException] SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "PETES"
+LINE 1: INSERT INTO Brownfields VALUES(203661,PISTOL PETES SALOON,Pl...
+                                                     ^
+#0 /var/www/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO Bro...', Array)
+#2 /var/www/app/Controller/UploadsController.php(39): DboSource->execute('INSERT INTO Bro...')
+#3 [internal function]: UploadsController->upload()
+#4 /var/www/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UploadsController), Array)
+#5 /var/www/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 /var/www/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UploadsController), Object(CakeRequest), Object(CakeResponse))
+#7 /var/www/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2013-01-30 04:57:56 Error: [PDOException] SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "PETES"
+LINE 1: INSERT INTO Brownfields VALUES(203661,PISTOL PETES SALOON,Pl...
+                                                     ^
+#0 /var/www/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO Bro...', Array)
+#2 /var/www/app/Controller/UploadsController.php(39): DboSource->execute('INSERT INTO Bro...')
+#3 [internal function]: UploadsController->upload()
+#4 /var/www/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UploadsController), Array)
+#5 /var/www/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 /var/www/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UploadsController), Object(CakeRequest), Object(CakeResponse))
+#7 /var/www/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2013-01-30 05:20:11 Error: [PDOException] SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "PETES"
+LINE 1: INSERT INTO Brownfields VALUES(203661,PISTOL PETES SALOON,Pl...
+                                                     ^
+#0 /var/www/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO Bro...', Array)
+#2 /var/www/app/Controller/UploadsController.php(39): DboSource->execute('INSERT INTO Bro...')
+#3 [internal function]: UploadsController->upload()
+#4 /var/www/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UploadsController), Array)
+#5 /var/www/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 /var/www/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UploadsController), Object(CakeRequest), Object(CakeResponse))
+#7 /var/www/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2013-01-30 05:26:37 Error: [PDOException] SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "PETES"
+LINE 1: INSERT INTO Brownfields VALUES(203661,PISTOL PETES SALOON,Pl...
+                                                     ^
+#0 /var/www/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO Bro...', Array)
+#2 /var/www/app/Controller/UploadsController.php(39): DboSource->execute('INSERT INTO Bro...')
+#3 [internal function]: UploadsController->upload()
+#4 /var/www/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UploadsController), Array)
+#5 /var/www/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 /var/www/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UploadsController), Object(CakeRequest), Object(CakeResponse))
+#7 /var/www/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2013-01-30 05:28:54 Error: [PDOException] SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "PETES"
+LINE 1: INSERT INTO Brownfields VALUES(203661,PISTOL PETES SALOON,Pl...
+                                                     ^
+#0 /var/www/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO Bro...', Array)
+#2 /var/www/app/Controller/UploadsController.php(39): DboSource->execute('INSERT INTO Bro...')
+#3 [internal function]: UploadsController->upload()
+#4 /var/www/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UploadsController), Array)
+#5 /var/www/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 /var/www/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UploadsController), Object(CakeRequest), Object(CakeResponse))
+#7 /var/www/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2013-01-30 05:38:57 Error: [MissingControllerException] Controller class Robots.txtController could not be found.
+#0 /var/www/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-01-30 06:07:50 Error: [PDOException] SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "L"
+LINE 1: ...01 ATLANTIC AVE','Atlantic City','FIRST UNION NAT'L BANK','5...
+                                                             ^
+#0 /var/www/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO bro...', Array)
+#2 /var/www/app/Controller/UploadsController.php(41): DboSource->execute('INSERT INTO bro...')
+#3 [internal function]: UploadsController->upload()
+#4 /var/www/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UploadsController), Array)
+#5 /var/www/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 /var/www/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UploadsController), Object(CakeRequest), Object(CakeResponse))
+#7 /var/www/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2013-01-30 06:27:19 Error: [PDOException] SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "brownfields_pkey"
+DETAIL:  Key (pi_num, site_id)=(, ) already exists.
+#0 /var/www/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO bro...', Array)
+#2 /var/www/app/Controller/UploadsController.php(41): DboSource->execute('INSERT INTO bro...')
+#3 [internal function]: UploadsController->upload()
+#4 /var/www/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UploadsController), Array)
+#5 /var/www/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 /var/www/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UploadsController), Object(CakeRequest), Object(CakeResponse))
+#7 /var/www/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2013-01-30 06:30:22 Error: Fatal Error (1): Maximum execution time of 30 seconds exceeded in [/var/www/app/Controller/UploadsController.php, line 41]
+2013-01-30 06:30:22 Error: [FatalErrorException] Maximum execution time of 30 seconds exceeded
+#0 /var/www/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Maximum executi...', '/var/www/app/Co...', 41)
+#1 [internal function]: ErrorHandler::handleError(1, 'Maximum executi...', '/var/www/app/Co...', 41, Array)
+#2 /var/www/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Maximum executi...', '/var/www/app/Co...', 41, Array)
+#3 /var/www/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-01-30 06:32:35 Error: Fatal Error (1): Maximum execution time of 30 seconds exceeded in [/var/www/lib/Cake/Model/Datasource/DboSource.php, line 461]
+2013-01-30 06:32:35 Error: [FatalErrorException] Maximum execution time of 30 seconds exceeded
+#0 /var/www/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Maximum executi...', '/var/www/lib/Ca...', 461)
+#1 [internal function]: ErrorHandler::handleError(1, 'Maximum executi...', '/var/www/lib/Ca...', 461, Array)
+#2 /var/www/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Maximum executi...', '/var/www/lib/Ca...', 461, Array)
+#3 /var/www/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-01-30 06:43:35 Error: Fatal Error (1): Maximum execution time of 60 seconds exceeded in [/var/www/lib/Cake/Model/Datasource/DboSource.php, line 461]
+2013-01-30 06:43:35 Error: [FatalErrorException] Maximum execution time of 60 seconds exceeded
+#0 /var/www/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Maximum executi...', '/var/www/lib/Ca...', 461)
+#1 [internal function]: ErrorHandler::handleError(1, 'Maximum executi...', '/var/www/lib/Ca...', 461, Array)
+#2 /var/www/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Maximum executi...', '/var/www/lib/Ca...', 461, Array)
+#3 /var/www/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
