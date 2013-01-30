@@ -1,0 +1,29 @@
+<?php
+// app/Controller/ImportsController.php
+
+class ImportsController extends AppController {
+
+    var $helpers = array('Html', 'Form');
+
+    public function beforeFilter()
+	{
+		
+	}
+
+    public function isAuthorized($user) {	
+    
+	    if ($this->action === 'import' && $this->Auth->user('id') !== null) {
+	        return true;
+	    }
+	    else
+	    	return false;
+	}
+
+    
+
+    public function import ($importdatafile, $choice) {
+
+	$messages = $this->Brownfield->import(importdatafile);
+	debug($messages);
+    }
+}

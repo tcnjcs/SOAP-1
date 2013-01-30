@@ -1,0 +1,3 @@
+Politician.name,Politician.party,Politician.day_elected,Politician.sname,Politician.district_num,Politician.phone,Politician.address,Politician.imageurl
+Apple Bees,Democrat,2013-01-01,New Jersey,39,NULL,NULL,NULL,NULL,NULL
+Banana Split,Republican,2013-01-01,New Jersey,34,NULL,NULL,NULL,NULL,NULL
