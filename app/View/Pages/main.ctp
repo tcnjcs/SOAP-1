@@ -1,4 +1,5 @@
 <div class="container">
+	<?php echo $this->Session->flash(); ?>
 	<div class="hero-unit" style="text-align: center;" >
 		<h1>Students Organizing Against Pollution</h1>
 	</div>
