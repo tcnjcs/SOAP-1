@@ -24,7 +24,7 @@
 					echo $this->Form->button('Log In', array('type' => 'submit', 'class' => 'btn btn-primary'));
 					//echo $this->Form->end();
 				?>
-				<button type="button" class="btn" onClick="location.href='/users/add'">Register</button>
+				<button type="button" class="btn" onClick="location.href='http://tardis.tcnj.edu/cabect/SOAP/index.php/users/add'">Register</button>
 			</div>
 			<div class="span4" style="padding:65px 0 0 0;">
 				<?php

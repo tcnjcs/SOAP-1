@@ -7,7 +7,7 @@
 		echo $this->Form->input('Choose File', array('type' => 'file', 'label' => 'Choose CSV File'));
 		echo "<br>";
 		echo $this->Form->input('Data Type', array(
-			'options' => array('Brownfields', 'Chemicals', 'Facilities', 'Politicians')
+			'options' => array('Chemicals', 'Facilities', 'Politicians')
 			)); 
 		echo "<br>";	
 		$options = array(

@@ -4,7 +4,6 @@
 <div class="span9">
     <table class='table-bordered table-striped' width=100%>
         <tr>
-            <th>Id</th>
             <th>Title</th>
             <th>Created</th>
             <th>Actions</th>
@@ -12,7 +11,6 @@
     <!-- Here's where we loop through our $posts array -->
         <?php foreach ($posts as $post): ?>
         <tr>
-            <td><?php echo $post['Post']['id']; ?></td>
             <td>
                 <?php echo $this->Html->link($post['Post']['title'], array('action' => 'view', $post['Post']['id']));?>
             </td>
@@ -40,5 +38,6 @@
         </tr>
         <?php endforeach; ?>
     </table>
+    <br>
     <button class='btn'><?php echo $this->Html->link('Add', array('action' => 'add')); ?></button>
 </div>

@@ -7,6 +7,8 @@ App::uses('Facebook', 'Facebook.Lib');
 
 class UsersController extends AppController {
 	
+    public $helpers = array('Facebook.Facebook');
+    
     public function beforeFilter() {
         parent::beforeFilter();	//Allows anyone to call index, view, and display.
         $this->Auth->allow('add', 'logout');	//Allows anyone to call add and logout.
@@ -33,12 +35,11 @@ class UsersController extends AppController {
     	}
 	}
 	
-
     public function logout() {
-    
-    	$this->Session->destroy();
-        //$this->redirect($this->referer());
-        $this->redirect($this->Auth->redirect());
+        $this->Connect->FB->destroysession();
+        $this->Session->destroy();
+        $this->Auth->logout();
+        $this->redirect('/');
     }
 	
     public function index() {

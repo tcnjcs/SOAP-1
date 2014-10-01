@@ -8,7 +8,7 @@
             			<span class="icon-bar"></span>
             			<span class="icon-bar"></span>
           		</a>	
-			<a class="brand" href="/" >SOAP</a>
+			<?php echo $this->Html->link('SOAP',array('controller' => 'pages', 'action' => 'main', 'full_base' => true),array('class' => 'brand')); ?> 
 			<div class="nav-collapse">
 				<ul class="nav">
 					<li class="divider-vertical"></li>
@@ -18,14 +18,15 @@
 					      <b class="caret"></b>
 					    </a>
 					    <ul class="dropdown-menu">
-					      <li><a href="/posts">Posts</a></li>
-					      <li><a href="/brownfields">Brownfields</a></li>
-					      <li><a href="/chemicals">Chemicals</a></li>
-					      <li><a href="/facilities">Facilities</a></li>
-					      <li><a href="/politicians">Politicians</a></li>
-					      <li class="divider"></li>
-					      <li><a href="/query">Build Query</a></li>
-					      <li><a href="/uploads">Upload</a></li>
+					      	<li><?php echo $this->Html->link('Posts',array('controller' => 'posts', 'action' => 'index', 'full_base' => true)); ?> </li>
+					      	<li><?php echo $this->Html->link('Chemicals',array('controller' => 'chemicals', 'action' => 'index', 'full_base' => true)); ?> </li>
+						<li><?php echo $this->Html->link('Facilities',array('controller' => 'facilities', 'action' => 'index', 'full_base' => true)); ?> </li>
+						<li><?php echo $this->Html->link('Politics',array('controller' => 'politicians', 'action' => 'index', 'full_base' => true)); ?> </li>
+						<li class="divider"></li>
+						<li><?php echo $this->Html->link('Query',array('controller' => 'pages', 'action' => 'query', 'full_base' => true)); ?> </li>
+						<li><?php echo $this->Html->link('Uploads',array('controller' => 'uploads', 'action' => 'index', 'full_base' => true)); ?> </li>
+
+
 					    </ul>
 				  	</li>
 					<li class="dropdown" id="menu2">
@@ -34,8 +35,11 @@
 					      <b class="caret"></b>
 					    </a>
 					    <ul class="dropdown-menu">
-					      <li><a href="/map">Map</a></li>
-					      <li><a href="/graph">Graph</a></li>
+						<li><?php echo $this->Html->link('Map',array('controller' => 'pages', 'action' => 'map', 'full_base' => true)); ?> </li>
+						<li><?php echo $this->Html->link('Graph',array('controller' => 'pages', 'action' => 'graph', 'full_base' => true)); ?> </li>
+
+
+
 					    </ul>
 				  	</li>
 				  	<li class="dropdown" id="menu3">
@@ -44,15 +48,16 @@
 					      <b class="caret"></b>
 					    </a>
 					    <ul class="dropdown-menu">
-					      <li><a href="/docs">Documentation</a></li>
-					      <li><a href="http://dbzgokuanimationvideos.webs.com/Anime-For-Dummies-Anime-For-Dummies--Dragon-Ball-Z-e8949909%20(1).jpg">FAQ</a></li>
-					    </ul>
+					    
+						<li><?php echo $this->Html->link('Documentation',array('controller' => 'pages', 'action' => 'docs', 'full_base' => true)); ?> </li>
+
+					  </ul>
 				  	</li>
 				</ul>
 			<ul class="nav pull-right">
 				<li class='divider-vertical'></li>
 	          		<?php 
-	          		if ($userId === null)
+	          		if ($userId === null && $facebook_id === null)
 	          		/*	echo '
 						
 						<li class="signinModal">
@@ -63,28 +68,23 @@
 					echo '
 						
 						<li class="signinModal">
-						<a href="/users/login">Log In</a>
+					'. $this->Html->link('Log In',array('controller' => 'users', 'action' => 'login', 'full_base' => true)) .'
 						</li>';
 
 				else
 					{
 						echo '
 						<li class="dropdown" id="menu4">
-						<a href="#menu4"
-						class="dropdown-toggle"
-						data-toggle="dropdown">
-						Hello '.$userId.'!
-						<b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="/users/dashboard">Dashboard</a></li>';
-						if ($facebook_id === null)
-							echo '<li><a href="/users/logout" >Log Out</a></li>
-							</ul>
-							</li>';
-						else
-							echo '<li><a onclick="logout(\'/users/logout\');" >Log Out</a></li>
-							</ul>
-							</li>';
+                            <a href="#menu4" class="dropdown-toggle" data-toggle="dropdown">Hello, '.$userId.'!<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>'. $this->Html->link('Dashboard',array('controller' => 'users', 'action' => 'dashboard', 'full_base' => true)).' </li>';
+                                if ($facebook_id === null) echo '
+                                    <li>'. $this->Html->link('Log Out',array('controller' => 'users', 'action' => 'logout', 'full_base' => true)).' </li>';
+                                else
+                                    echo '<li>'. $this->Html->link('Log Out',array('controller' => 'users', 'action' => 'logout', 'full_base' => true)).' </li>';
+							echo '
+                            </ul>
+                        </li>';
 					}
 	         		?>
 		   		 </ul>

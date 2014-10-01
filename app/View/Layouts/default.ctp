@@ -32,14 +32,13 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	<?php
 		echo $this->Html->meta('icon');
 		echo $this->Html->css('bootstrap.min');
+		echo $this->Html->css('bootstrap-responsive');
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
 	
-	<link href="<?=$this->webroot?>css/bootstrap-responsive.css" rel="stylesheet" >
-
-    	<style type='text/css'>
+	    	<style type='text/css'>
     		.social 
 		{
         		font-family: 'JustVector';
@@ -48,11 +47,11 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 
 	<!-- Moved script files up here above body in order to call the invalidCredentials element using modal.js  -->
 	<script language='javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></script>
-	<script language='javascript' src='<?=$this->webroot?>js/bootstrap-dropdown.js'></script>
-	<script language='javascript' src='<?=$this->webroot?>js/bootstrap-collapse.js'></script>
-	<script language='javascript' src='<?=$this->webroot?>js/bootstrap-modal.js'></script>
-	<script language='javascript' src='<?=$this->webroot?>js/bootstrap-transition.js'></script>
-	<script language='javascript' src='<?=$this->webroot?>js/bootstrap-alert.js'></script>
+	<?php echo $this->Html->script('bootstrap-dropdown'); ?>
+	<?php echo $this->Html->script('bootstrap-collapse'); ?>
+	<?php echo $this->Html->script('bootstrap-modal'); ?>
+	<?php echo $this->Html->script('bootstrap-transition'); ?>
+	<?php echo $this->Html->script('bootstrap-alert'); ?>
 
 </head>
 <body>
@@ -67,7 +66,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	</div>
     	<?php echo $this->element('footer'); ?>
 </body>
-<link rel="stylesheet" href="<?=$this->webroot?>css/stylesheet.css" type="text/css" charset="utf-8" /> <!-- Used for Facebook/Twitter logos in footer. -->
+<?php echo $this->Html->css('stylesheet'); ?>  <!-- Used for Facebook/Twitter logos in footer. -->
 
 <!--
 <script language='javascript' src='http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js'></script>

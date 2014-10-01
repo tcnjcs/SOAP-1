@@ -1,5 +1,5 @@
 <?php
-class Post extends AppModel { 
+class Post extends AppModel {
     public $validate = array(
         'title' => array(
             'rule' => 'notEmpty'
@@ -8,11 +8,11 @@ class Post extends AppModel {
             'rule' => 'notEmpty'
         )
     );
-    var $name = 'Post';  
+    var $name = 'Post';
     var $hasMany = array('Comment'=>array('className'=>'Comment'));
     
     public function isOwnedBy($post, $user) {
-    	return $this->field('id', array('id' => $post, 'user_id' => $user)) === $post;
-	}
+     return $this->field('id', array('id' => $post, 'user_id' => $user)) === $post;
+}
 }
 ?>

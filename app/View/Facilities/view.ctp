@@ -2,35 +2,95 @@
 <div class=span2>
 	<?php echo $this->element('sidebar'); ?>
 </div>
-<div class=span7>
-	<h1><?php echo ''.$facility['Facility']['facility_name'].''; ?></h1>
-	<h2><?php echo 'TRI ID: '.$facility['Facility']['tri_facility_id'].''; ?></h2>
-	<h2><?php echo 'Parent Company: '.$facility['Facility']['parent_company_name'].''; ?></h2>
-	<h3><?php echo ''.$facility['Facility']['street_address'].' '.$facility['Facility']['zip'].''; ?></h3>
-	<h3>Coordinates: <?php 
-		if ($facility['Facility']['lat'] == null || $facility['Facility']['long'] == null)
-			echo "N/A";
-		else
-			echo ''.$facility['Facility']['lat'].', '.$facility['Facility']['long'].''; 
-		?></h3>
+<div class="span9">
+    <style>
+        .details{
+            margin-bottom:25px;
+        }
+        hr{
+            border-color:#013435;
+            margin:5px;
+        }
+        h1{
+            font-size:25px;
+        }
+        h2{
+            font-size:20px;
+        }
+        h3{
+            font-size:15px;
+        }
+        h4{
+            font-size:12px;
+        }
+        a.pageLink{
+            color:#037162;
+        }
+    </style>
+    <h1 style="text-align:center;"><?php echo $facility_info[0][0]['facility_name']; ?></h1>
+    <div class="details">
+        <h1>Facility Details:</h1>
+        <hr />
+        <h3>Parent Company: <?php echo $facility_info[0][0]['owner_name']; ?></h3>
+        <h3>Danger Level: <?php echo $facility_info[0][0]['dangerous_state']; ?> (out of 5)</h3>
+        <h3>Brownfield: <?php echo $facility_info[0][0]['is_brownfield']; ?></h3>
+    </div>
+    <div class="details">
+        <h1>Location details:</h1>
+        <hr />
+        <h3>Street Address: <?php echo $facility_info[0][0]['location_id']; ?></h3>
+        <h3>County: <?php echo $facility_info[0][0]['county']; ?></h3>
+        <h3>Municipality: <?php if($facility_info[0][0]['municipality'] == null) echo "N/A"; else echo $facility_info[0][0]['municipality']; ?></h3>
+        <h3>
+        <?php 
+            if ($facility_info[0][0]['latitude'] == null || $facility_info[0][0]['longitude'] == null)
+                echo 'Latitude: N/A, Longitude: N/A';
+            else
+                echo 'Latitude: ' . $facility_info[0][0]['latitude'] . ', ' . 'Longitude: ' . $facility_info[0][0]['longitude']; 
+        ?>
+        </h3>
+        <h3>
+        <?php 
+            if ($facility_info[0][0]['x_coor'] == null || $facility_info[0][0]['y_coor'] == null)
+                echo 'X Coordinate: N/A, Y Coordinate: N/A';
+            else
+                echo 'X Coordinate: ' . floatval($facility_info[0][0]['x_coor']) . ', ' . 'Y Coordinate: ' . -1*floatval($facility_info[0][0]['y_coor']); 
+        ?>
+        </h3>
+    </div>
+    <div class="details">
+        <h1>Chemicals found on-site:</h1>
+        <hr />
+        <?php foreach ($chem_info as $chem): ?>
+            <h3><a class="pageLink" href='/../SOAP/index.php/chemicals/view/<?php echo $chem[0]['chemical_id']; ?>'><?php echo $chem[0]['chemical_name']; ?></a></h3>
+            <h4>Total Amount: <?php echo $chem[0]['total_amount']; ?></h4>
+            <h4>Fugitive Air Amount: <?php echo $chem[0]['fugair_amount']; ?></h4>
+            <h4>Water Amount: <?php echo $chem[0]['water_amount']; ?></h4>
+            <h4>Stack Air Amount: <?php echo $chem[0]['stackair_amount']; ?></h4>
+        <?php endforeach; ?>
+    </div>
 	<br>
 	<br>
 	<?php
-		$mapOptions= array( 
-                'width'=>'100%',                //Width of the map 
-                'height'=>'350px',                //Height of the map 
-                'zoom'=>15,                        //Zoom 
-                'type'=>'ROADMAP',                 //Type of map (ROADMAP, SATELLITE, HYBRID or TERRAIN) 
-                'latitude'=>$facility['Facility']['lat'],    //Default latitude if the browser doesn't support localization or you don't want localization
-                'longitude'=>$facility['Facility']['long'],    //Default longitude if the browser doesn't support localization or you don't want localization
-                'localize'=>false,                //Boolean to localize your position or not 
-                'marker'=>true,                    //Boolean to put a marker in the position or not 
-                'markerIcon'=>'http://google-maps-icons.googlecode.com/files/home.png',    //Default icon of the marker 
-                'infoWindow'=>true,                //Boolean to show an information window when you click the marker or not
-                'windowText'=>'My Position'        //Default text inside the information window 
-            ); 
-        echo $this->GoogleMapV3->map($mapOptions); //DON'T FORGET '$this'
-        echo $this->GoogleMapV3->addMarker(array('infoWindow'=>false, 'latitude'=>$facility['Facility']['lat'],'longitude'=>$facility['Facility']['long']));
+        if($facility_info[0][0]['x_coor'] != null && $facility_info[0][0]['y_coor'] != null){
+            $latitude = floatval($facility_info[0][0]['x_coor']);
+            $longitude = -1*floatval($facility_info[0][0]['y_coor']);
+            $mapOptions= array( 
+                    'width'=>'100%',                //Width of the map 
+                    'height'=>'350px',                //Height of the map 
+                    'zoom'=>15,                        //Zoom 
+                    'type'=>'ROADMAP',                 //Type of map (ROADMAP, SATELLITE, HYBRID or TERRAIN) 
+                    'latitude'=>$latitude,    //Default latitude if the browser doesn't support localization or you don't want localization
+                    'longitude'=>$longitude,    //Default longitude if the browser doesn't support localization or you don't want localization
+                    'localize'=>false,                //Boolean to localize your position or not 
+                    'marker'=>true,                    //Boolean to put a marker in the position or not 
+                    'markerIcon'=>'http://google-maps-icons.googlecode.com/files/home.png',    //Default icon of the marker 
+                    'infoWindow'=>true,                //Boolean to show an information window when you click the marker or not
+                    'windowText'=>'My Position'        //Default text inside the information window 
+                ); 
+            echo $this->GoogleMapV3->map($mapOptions); //DON'T FORGET '$this'
+            echo $this->GoogleMapV3->addMarker(array('infoWindow'=>false, 'latitude'=>$latitude, 'longitude'=>$longitude));
+        }
     ?>
     <br>
     <br>
@@ -50,7 +110,7 @@
 <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4fe8fc260b784686"></script>
 <!-- AddThis Button END -->
 	<br>
-	<h5>Comments: </h5>
+	<h4>Comments: </h4>
 <!--	<div id="disqus_thread"></div>
 	<script type="text/javascript">
 		/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -66,13 +126,16 @@
 	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 	<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 -->
-<div class="facebook" width="100%">
+<style>
+    .fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget iframe[style]{
+        width:600px !important;
+    }
+</style>
+<div class="facebook">
 <?php echo $this->Facebook->comments(
 		$options = array(
-			//'width' => '300%',
 			'mobile' => 'false'
 			)
 		);  ?>
-</div>	
-	
+</div>
 </div>

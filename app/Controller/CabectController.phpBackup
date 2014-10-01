@@ -1,0 +1,9 @@
+<?php
+class CabectController extends AppController 
+{
+
+	public function SOAP() 
+	{
+
+	}
+}
